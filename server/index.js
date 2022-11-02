@@ -8,8 +8,8 @@ import bodyParser from 'body-parser'
 
 import indexRoutes from "./routes/index.routes"
 import imagesRoutes from './routes/images.routes'
-//import messageQuestionRoutes from './routes/messageQuestion.routes'
-//import messageConsultRoutes from './routes/messageConsult.routes'
+import messageQuestionRoutes from './routes/messageQuestion.routes'
+import messageConsultRoutes from './routes/messageConsult.routes'
 
 //Importando base de datos 
 import './database'
@@ -31,9 +31,8 @@ app.use(express.json())
  app.use(imagesRoutes)  
 
 
-
-app.set('port', 3800);
-console.log('success')
-
-
-app.listen(app.get('port'))
+ app.set('port', process.env.PORT || 3800);
+ console.log('success')
+ 
+ 
+ app.listen(app.get('port'))
